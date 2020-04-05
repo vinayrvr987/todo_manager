@@ -26,5 +26,5 @@ ActiveRecord::Schema.define(version: 2020_04_05_092111) do
     t.text "user_email"
     t.text "user_password"
   end
-
+  
 end
