@@ -6,8 +6,14 @@
   <ul>
   <% todos.each do |todo| %>
     <li class="TodoItem">
-      <input class="TodoItem-checkbox" type="checkbox">
-      <%= todo.todo_text %>
+
+      <% if todo.completed %>
+        <input class="TodoItem-checkbox" type="checkbox" checked>
+        <p class="TodoItem-textlinethrough"><%= todo.todo_text %></p>
+      <% else %>
+        <input class="TodoItem-checkbox" type="checkbox" >
+        <%= todo.todo_text %>
+      <% end %>
 
       <% if show_due_date %>
         <p class="TodoItem-date"><%= todo.due_date.to_s(:short) %></p>
@@ -17,6 +23,7 @@
         <img src="images.png" width="12" height="12">
       </a>
     </li>
+
     <% end %>
   </ul>
 </section>
