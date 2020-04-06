@@ -103,11 +103,10 @@ body{
   border-radius: 4px;
   width: 16px;
 }
-.TodoItem-overduelabel{
-  font-size: 12px;
-  color: #C53030;
-  letter-spacing: 0.09px;
+.TodoItem-date{
   margin-left: 10px;
+  font-size: 10px;
+  color: #726A7E;
 }
 ul{
   list-style: none;
