@@ -104,6 +104,8 @@ body{
   letter-spacing: 0.1px;
   margin-bottom: 16px;
   align-items: center;
+  padding: 2px;
+  border-radius: 6px;
 }
 
 .TodoItem-checkbox{
@@ -134,8 +136,8 @@ article{
   display: block;
 }
 
-.TodoItem.hover{
-  background-color: #f1f1f7;
+.TodoItem:hover{
+  background-color: blanchedalmond;
 }
 
 .TodoItem-delete{

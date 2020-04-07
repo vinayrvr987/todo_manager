@@ -11,7 +11,6 @@
         <input class="AddTodo-button" type="submit" value="Add" >
       </form>
 
-
     <%= render partial: "todo-section", locals: {
                  section_title: "OverDue",
                  todos: Todo.overdue.incompleted,
