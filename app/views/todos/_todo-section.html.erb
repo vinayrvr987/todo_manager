@@ -6,32 +6,25 @@
   <ul>
     <% todos.each do |todo| %>
       <li class="TodoItem">
-
-          <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
-            <input class="TodoItem-checkbox"
-                   name="completed"
-                   type="checkbox" <%= todo.completed ? "checked" : "" %>
-                   onclick="this.form.submit()"
-             />
+        <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+          <input
+            class="TodoItem-checkbox"
+            name="completed"
+            type="checkbox"
+            <%= todo.completed ? "checked" : "" %>
+            onclick="this.form.submit()"
+          />
+        <% end %>
+        <p class='<%= todo.completed ? "TodoItem-textlinethrough" : "" %>'><%= todo.todo_text %></p>
+          <% if show_due_date %>
+            <p class="TodoItem-date"><%= todo.due_date.to_s(:short) %></p>
           <% end %>
-
-        <p class='<%= todo.completed ? "TodoItem-textlinethrough" : "" %>'>
-          <%= todo.todo_text %>
-        </p>
-
-        <% if show_due_date %>
-          <p class="TodoItem-date"><%= todo.due_date.to_s(:short) %></p>
-        <% end %>
-
         <a class="TodoItem-delete" "href"=" javascript:void(0)">
-
-        <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
-          <%= image_submit_tag("images.png", class: "TodoItem-deleteimg") %>
-        <% end %>
-
+          <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
+            <%= image_submit_tag("images.png", class: "TodoItem-deleteimg") %>
+          <% end %>
         </a>
       </li>
-
     <% end %>
   </ul>
 </section>
